@@ -10,3 +10,7 @@ from App.APIs.unlimited import router as unlimited_router
 
 app.include_router(limited_router)
 app.include_router(unlimited_router)
+
+@app.get("/health")
+async def health():
+    return {"status": "ok"}
